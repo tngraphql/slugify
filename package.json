@@ -1,0 +1,54 @@
+{
+  "name": "@tngraphql/slugify",
+  "version": "1.0.0",
+  "description": "Add slugs to tngraphql lucid models",
+  "main": "dist/lib/tngraphql-sluglife.js",
+  "types": "./dist/lib/tngraphql-sluglife.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "compile": "npm run clean && tsc -b",
+    "build": "npm run compile"
+  },
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "tngraphql",
+    "tngraphql-framework",
+    "tngraphql-lucid",
+    "slug",
+    "slugify",
+    "tngraphql-lucid-plugin",
+    "orm",
+    "lucid orm"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "sluglife": "^0.9.8"
+  },
+  "devDependencies": {
+    "@adonisjs/logger": "^2.0.7",
+    "@poppinss/dev-utils": "^1.0.7",
+    "@tngraphql/console": "^1.0.1",
+    "@tngraphql/graphql": "^1.0.3",
+    "@tngraphql/illuminate": "^1.1.6",
+    "@tngraphql/lucid": "^1.0.11",
+    "@tngraphql/route": "^1.0.1",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.22",
+    "dotenv": "^8.2.0",
+    "jest": "^26.1.0",
+    "luxon": "^1.24.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.4.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "tslib": "^1.11.1",
+    "typescript": "^3.7.2"
+  }
+}
