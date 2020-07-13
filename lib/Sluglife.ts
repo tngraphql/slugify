@@ -4,10 +4,12 @@
  * Date: 7/13/2020
  * Time: 5:28 PM
  */
+import {LucidModel} from "@tngraphql/lucid/build/src/Contracts/Model/LucidModel";
 
 const slug = require('sluglife');
 
-const Fn = function () { };
+const Fn = function () {
+};
 
 Fn.prototype.slugifyModel = function (Model, slugOptions) {
     // Get the target column
@@ -19,7 +21,7 @@ Fn.prototype.slugifyModel = function (Model, slugOptions) {
             return instance[slugSourceField];
         });
 
-        const options = (slugOptions && slugOptions.slugOptions) || { lower: true};
+        const options = (slugOptions && slugOptions.slugOptions) || {lower: true};
         return slug(slugParts.join(' '), options);
     };
 
@@ -159,5 +161,23 @@ Fn.prototype.slugifyModel = function (Model, slugOptions) {
     // Model.beforeUpdate('handleSlugify', handleSlugify);
 };
 
+type SlugOptions = {
+    source: string[];
+    suffixSource?: string[];
+    slugOptions?: {
+        replacement?: string,
+        symbols?: boolean,
+        remove?: RegExp,
+        lower?: boolean,
+        charmap?: string,
+        multicharmap?: string
+    };
+    overwrite?: boolean;
+    column?: string;
+}
 
-export const TngraphqlSlugify = new Fn();
+interface TngraphqlSlugifyInterface {
+    slugifyModel(Model: LucidModel, slugOptions: SlugOptions);
+}
+
+export const TngraphqlSlugify: TngraphqlSlugifyInterface = new Fn();
