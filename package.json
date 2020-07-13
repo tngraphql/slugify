@@ -50,5 +50,18 @@
     "ts-node-dev": "^1.0.0-pre.44",
     "tslib": "^1.11.1",
     "typescript": "^3.7.2"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tngraphql/slugify.git"
+  },
+  "author": "Nguyenpl117,TNGraphQL",
+  "bugs": {
+    "url": "https://github.com/tngraphql/slugify/issues"
+  },
+  "homepage": "https://github.com/tngraphql/slugify#readme"
 }
