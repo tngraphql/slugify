@@ -7,7 +7,7 @@
 import {getBaseModel, getDb, ormAdapter} from "./helpers";
 import {column} from "@tngraphql/lucid/build/src/Orm/Decorators";
 import {DateTime} from "luxon";
-import {TngraphqlSlugify} from "../lib/tngraphql-sluglife";
+import {Slugify} from "../lib/Sluglife";
 
 let db: ReturnType<typeof getDb>
 let BaseModel: ReturnType<typeof getBaseModel>
@@ -39,7 +39,7 @@ describe('Utils | syncDiff', () => {
             public static boot() {
                 super.boot();
 
-                TngraphqlSlugify.slugifyModel(this, {
+                Slugify.slugifyModel(this, {
                     source: ['name'],
                     slugOptions: { lower: true },
                     overwrite: true,

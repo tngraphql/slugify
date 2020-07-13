@@ -180,4 +180,4 @@ interface TngraphqlSlugifyInterface {
     slugifyModel(Model: LucidModel, slugOptions: SlugOptions);
 }
 
-export const TngraphqlSlugify: TngraphqlSlugifyInterface = new Fn();
+export const Slugify: TngraphqlSlugifyInterface = new Fn();
