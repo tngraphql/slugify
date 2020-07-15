@@ -1,6 +1,6 @@
 {
   "name": "@tngraphql/slugify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Add slugs to tngraphql lucid models",
   "main": "dist/lib/Sluglife.js",
   "types": "./dist/lib/Sluglife.d.ts",
