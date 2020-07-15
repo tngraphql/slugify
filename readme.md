@@ -11,13 +11,36 @@
 slugifyModel takes an options object as it's second parameter.
 
 ```javascript
-Slugify.slugifyModel(User, {
-    source: ['givenName'],
-    slugOptions: { lower: true },
-    overwrite: false,
-    column: 'slug'
-});
+class ExampleModel extends BaseModel {
+    @column({ isPrimary: true })
+    public id: string
 
+    @column()
+    public name: string;
+
+    @column()
+    public slug: string;
+
+    static boot() {
+        super.boot();
+
+        this.uses([Slugable]);
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public sluggable() {
+        return {
+            source: ['name'],
+            slugOptions: {lower: true},
+            overwrite: false,
+            column: 'slug'
+        }
+    }
+}
 ```
 Available Options
 
